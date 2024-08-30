@@ -1,0 +1,56 @@
+django
+django-cors-headers
+djangorestframework
+# markdown
+# django-filter
+# googletrans
+# google_trans_new
+deep-translator
+Pillow
+# psycopg2
+djangorestframework-simplejwt
+free-proxy
+g4f
+#gradio_client
+supabase
+docxtpl
+
+
+
+
+browser_cookie3
+curl_cffi
+
+
+
+numpy
+undetected_chromedriver
+platformdirs
+
+
+
+#0204
+requests
+pycryptodome
+curl_cffi>=0.5.10
+aiohttp
+certifi
+browser_cookie3
+typing-extensions
+PyExecJS
+duckduckgo-search
+nest_asyncio
+werkzeug
+loguru
+pillow
+platformdirs
+fastapi
+uvicorn
+flask
+py-arkose-generator
+asyncstdlib
+async-property
+undetected-chromedriver
+brotli
+beautifulsoup4
+setuptools

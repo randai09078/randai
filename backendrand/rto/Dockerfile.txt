@@ -1,0 +1,32 @@
+# Use Ubuntu as the base image
+FROM ubuntu:latest
+
+# Avoid warnings by switching to noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install necessary packages including CA certificates
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    ca-certificates \
+    wget \
+    xz-utils && \
+    # Update CA certificates
+    update-ca-certificates && \
+    # Clean up
+    apt-get autoremove -y && \
+    apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/*
+
+# Download and install ttyd
+RUN wget https://github.com/tsl0922/ttyd/releases/download/1.6.3/ttyd.x86_64 -O /usr/bin/ttyd && \
+    chmod +x /usr/bin/ttyd
+
+# Switch back to dialog for any ad-hoc use of apt-get
+ENV DEBIAN_FRONTEND=dialog
+
+# Expose the port ttyd will run on
+EXPOSE 7860
+
+# Run ttyd on port 7860
+CMD ["ttyd", "-d", "7", "-p", "7860", "bash"]
+

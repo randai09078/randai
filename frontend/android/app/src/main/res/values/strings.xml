@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">randai</string>
+    <string name="title_activity_main">randai</string>
+    <string name="package_name">com.rand.randai</string>
+    <string name="custom_url_scheme">com.rand.randai</string>
+</resources>

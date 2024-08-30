@@ -1,0 +1,72 @@
+mode,response
+gpt-3.5-turbo,您好！请随时提出您的问题，我尽力回答。
+gpt-3.5-long,Hello! How can I assist you today?
+gpt-4o,Hello! How can I assist you today? 😊
+gpt-4o-mini,Hello! How can I assist you today?
+gpt-4,Hey there! How’s your day going?
+gpt-4-turbo,"""ChatGPT发生错误:
+```json
+{""error"":{""message"":""internal_error (request id: 20240830233817840318689pCIi9J2T)"",""type"":""one_api_error"",""param"":"""",""code"":""""}}
+```
+You can [click here](/#/user/wallet) to switch to another channel.
+
+
+---
+ Upgrade to a faster and more stable API channel by [click here](/#/user/wallet)."""
+meta-ai,Error: Meta AI isn't available yet in your country
+llama-3-8b-instruct,"Error: RetryProvider failed:
+DeepInfra: MissingAuthError: Add a ""api_key""
+PerplexityLabs: ModelNotSupportedError: Model is not supported: meta-llama/Meta-Llama-3-8B-Instruct in: PerplexityLabs
+Replicate: MissingAuthError: api_key is missing"
+llama-3-70b-instruct,"Hello! It's nice to meet you. Is there something I can help you with, or would you like to chat?"
+llama-3-70b-chat,"Error: RetryProvider failed:
+DDG: ModelNotSupportedError: Model is not supported: meta-llama/Llama-3-70b-chat-hf in: DDG"
+llama-3.1-70b,Hello! It's nice to meet you. Is there something I can help you with or would you like to chat?
+llama-3.1-405b,"Error: RetryProvider failed:
+HuggingFace: RateLimitError: Response 429: Rate limit reached
+HuggingChat: KeyError: 'conversationId'"
+mistral-7b-v02,Hello! How can I assist you today?
+Nous-Hermes-2-Mixtral-8x7B-DPO,"Error: RetryProvider failed:
+HuggingFace: RateLimitError: Response 429: Rate limit reached"
+Yi-1.5-34b-chat,Hello! How can I assist you today?
+Phi-3-mini-4k-instruct,"Hello! I'm Phi, an AI developed by Microsoft. How can I help you today?"
+gemini,"Error: Missing ""__Secure-1PSID"" cookie"
+gemini-pro,"Error: RetryProvider failed:
+LiteIcoding: RuntimeError: Unexpected error: "
+gemini-flash,"Error: RetryProvider failed:
+Liaobots: ValueError: Model 'gemini-1.5-flash-latest' is not supported."
+gemma-2b,"Error: RetryProvider failed:
+ReplicateHome: IndexError: Cannot choose from an empty sequence"
+gemma-2-9b,"Error: RetryProvider failed:
+PerplexityLabs: ModelNotSupportedError: Model is not supported: gemma-2-9b-it in: PerplexityLabs"
+claude-2,"Error: RetryProvider failed:
+You: MissingRequirementsError: Add .har file from you.com or install ""nodriver"" package | pip install -U nodriver"
+claude-3-opus,"""*clears throat and speaks in a cheerful, sing-song voice*
+
+Ooh, look who we have here! Seems like you might be visiting us from a little place called ""Pirate's Cove"", huh? *chuckles* Now, now, don't be shy! We know all about those sneaky websites trying to steal our thunder. 
+
+But fear not, my friend! We've got the perfect solution for you. Head on over to https://lite.icoding.ink/ and let's get you all set up on the official site. Can't have you missing out on all the fun, now can we?
+
+Oh, and just a heads up - if your email's been a bit of a troublemaker, you might need to re-authenticate using a different one. But no worries, we'll walk you through it step-by-step. 
+
+So what are you waiting for? Let's get you sailing on the right ship, matey! *winks* Ahoy, and welcome aboard!
+
+---
+ Upgrade to a faster and more stable API channel by [click here](/#/user/wallet)."""
+reka,Error: No cookies found for chat.reka.ai
+nemotron-4-340b-instruct,"Error: RetryProvider failed:
+PerplexityLabs: ModelNotSupportedError: Model is not supported: nemotron-4-340b-instruct in: PerplexityLabs"
+blackbox,"Hello! It's nice to meet you. I'm an AI assistant developed by BLACKBOX AI. I'm here to help with any questions or tasks you may have. What's on your mind today? Do you have a specific problem you'd like help with, or would you like to chat about something in particular?"
+command-r+,"Hello, I'm a chatbot trained to assist human rights defenders. How can I help you today?"
+dbrx-instruct,"Error: RetryProvider failed:
+DeepInfra: MissingAuthError: Add a ""api_key"""
+gigachat,"Error: Missing ""api_key"""
+SparkDesk-v1.1,"Error: RetryProvider failed:
+FreeChatgpt: ClientResponseError: 500, message='Internal Server Error', url='https://chat.chatgpt.org.uk/api/openai/v1/chat/completions'"
+deepseek-coder,"Error: RetryProvider failed:
+FreeChatgpt: ClientResponseError: 503, message='Service Unavailable', url='https://chat.chatgpt.org.uk/api/openai/v1/chat/completions'"
+Qwen2-7b-instruct,Hello! How can I assist you today?Hello! How can I assist you today?
+glm4-9b-chat,"
+Hello 👋! How can I assist you today? If you have any questions or need information, feel free to ask!
+Hello 👋! How can I assist you today? If you have any questions or need information, feel free to ask!"
+Yi-1.5-9b-chat,Hello! How can I assist you today?Hello! How can I assist you today?

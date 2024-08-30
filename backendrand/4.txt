@@ -1,0 +1,81 @@
+en
+conf t
+int s0/0
+ip add 1.0.0.1 255.0.0.0
+clock rate 64000
+no shut
+int f0/0
+ip add 10.0.0.1 255.0.0.0
+no shut
+
+
+en
+conf t
+int s0/0
+ip add 1.0.0.2 255.0.0.0
+no shut
+
+en
+conf t
+int s0/1
+ip add 2.0.0.1 255.0.0.0
+clock rate 64000
+no shut
+int f0/0
+ip add 20.0.0.1 255.0.0.0
+no shut
+
+
+
+en
+conf t
+int s0/0
+ip add 2.0.0.2 255.0.0.0
+no shut
+
+en
+conf t
+int s0/1
+ip add 3.0.0.1 255.0.0.0
+clock rate 64000
+no shut
+int f0/0
+ip add 30.0.0.1 255.0.0.0
+no shut
+
+
+en
+conf t
+int s0/0
+ip add 3.0.0.2 255.0.0.0
+no shut
+int f0/0
+ip add 40.0.0.1 255.0.0.0
+no shut
+
+
+
+
+conf t
+router ospf 10
+network 1.0.0.0 0.255.255.255 area 1
+network 10.0.0.0 0.255.255.255 area 1
+
+
+conf t
+router ospf 10
+network 1.0.0.0 0.255.255.255 area 1
+network 2.0.0.0 0.255.255.255 area 1
+network 20.0.0.0 0.255.255.255 area 1
+
+
+conf t
+router ospf 10
+network 2.0.0.0 0.255.255.255 area 2
+network 3.0.0.0 0.255.255.255 area 2
+network 30.0.0.0 0.255.255.255 area 2
+
+conf t
+router ospf 10
+network 3.0.0.0 0.255.255.255 area 2
+network 40.0.0.0 0.255.255.255 area 2

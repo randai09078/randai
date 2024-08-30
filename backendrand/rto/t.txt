@@ -1,0 +1,57 @@
+
+nginx.conf:
+server {
+    listen 4444 default_server;
+    listen [::]:4444 default_server;
+
+    server_name _;
+
+    location / {
+      
+        proxy_pass http://localhost:7860;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_cache_bypass $http_upgrade;
+        proxy_read_timeout 86400;
+        proxy_redirect off;
+    }
+
+    location /static/ {
+        # Serve backend from port 
+        rewrite /static/(.*) /$1 break;
+        proxy_pass http://localhost:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_cache_bypass $http_upgrade;
+        proxy_read_timeout 86400;
+        proxy_redirect off;
+    }
+}
+
+Dockerfile
+CMD ["bash", "run.sh"]
+
+run.sh
+#!/bin/bash
+
+service nginx start
+python -m http.server --directory ./static --bind 0.0.0.0 8000 & echo $! > http_server.pid
+python /home/user/app/randapi/randai/manage.py runserver 0.0.0.0:7860
+pkill -F http_server.pid
+rm http_server.pid
+
+
+why when go to http://randai09078-rto.hf.space/static/ 
+get 
+age not found (404)
+Directory indexes are not allowed here.
+Request Method:	GET
+Request URL:	http://randai09078-rto.hf.space/static/

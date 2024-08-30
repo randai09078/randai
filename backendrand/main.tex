@@ -1,0 +1,250 @@
+\documentclass[17pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{times}
+\usepackage{geometry}
+\geometry{margin=0.8in}
+\date{} 
+\begin{document}
+
+\title{\textbf{Chapter 1}}
+
+\maketitle
+\section*{\textbf{General Introduction}}
+\vspace{\baselineskip} 
+\subsection{Dynamical System}
+\noindent \textbf{Definition 1.1.} \textit{Dynamical systems theory}
+
+\noindent \textit {Dynamical systems theory is an area of mathematics used to describe the behavior of complex dynamical systems, usually by employing differential equations or difference equations. When differential equations are employed, the theory is called continuous dynamical systems. When difference equations are employed, the theory is called discrete dynamical systems. When the time variable runs over a set that is discrete over some intervals and continuous over other intervals, or is any arbitrary time-set such as a Cantor set, one gets dynamic equations on time scales. Some situations may also be modeled by mixed operators, such as differential-difference equations.}
+
+More specifically, dynamical systems are classified into:
+
+
+\newpage 
+\begin{itemize}
+    \item Continuous (differential equation) time dynamical system (Flow).
+    \item Discrete (difference equations) dynamical system such as \(g(x_n)\).
+\end{itemize}
+
+In this work, we focus exclusively on the Continuous time dynamical system. We consider dynamical systems of dimension \(n\), which are described by ordinary differential equations (ODEs). This implies that we utilize continuous time. An alternative would be difference equations with discrete time. Denoting \(x\) as the state vector of the system, we consider the equation
+
+$$
+\frac{dx}{dt} = f(\mathbf{x}, \mu), \quad \mathbf{x} \in \mathbb{R}^n, \mu \in \mathbb{R}. \quad \text{(1.1)}
+$$
+
+with a vector valued function \(f\) which can be non-linear. 
+
+This means equation (1) represents a system of differential equations in the form:
+
+$$
+\begin{aligned}
+\frac{dx_1}{dt} &= f_1(x_1, x_2, \ldots, x_n, \mu), \\
+\frac{dx_2}{dt} &= f_2(x_1, x_2, \ldots, x_n, \mu), \\
+&\vdots \quad \quad \quad   \\
+\frac{dx_n}{dt} &= f_n(x_1, x_2, \ldots, x_n, \mu), \quad (\text{1.2})
+\end{aligned}
+$$
+
+\newpage 
+In case of a linear function \(f\), the equation simplifies to
+\begin{equation} \label{eq:linear}
+    \frac{dx}{dt} = Ax \tag{1.3}
+\end{equation}
+where \(A\) is an \(n \times n\) matrix, and the system shows exponential behavior.
+
+\noindent \textbf{Example 1.1.} \textit{Harmonic oscillator}
+
+The basic harmonic oscillator is given by
+\begin{equation} \label{eq:harmonic_oscillator}
+    \ddot{x} + \omega^2_0 x = 0 \tag{1.4}
+\end{equation}
+This looks superficially like a one-dimensional system. However, the following trick eliminates the second derivative and reveals the linear but two-dimensional character of the harmonic oscillator: Choose \(x_1 = x\) and \(x_2 = \dot{x} = v\), with the velocity \(v\). Then, the equation written in the general form is
+\begin{equation} \label{eq:matrix_form}
+    \begin{pmatrix}
+        \dot{x}_1 \\
+        \dot{x}_2
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        0 & 1 \\
+        -\omega^2_0 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+        x_1 \\
+        x_2
+    \end{pmatrix} \tag{1.5}
+\end{equation}
+
+\subsubsection{Flow on a line}
+
+When we are looking at one-dimensional systems, the central equation becomes \(\frac{dx}{dt} = f(x)\) with an arbitrary function \(f\). Let us consider a simple example to discuss the non-linear dynamics: \(\dot{x} = \sin(x)\). The separation of variables 
+
+\newpage 
+
+
+
+This leads to the differential equation
+\[
+\frac{dx}{\sin(x)} = \csc(x) \, dx = dt
+\]
+which can be integrated with the result
+\[
+t = \ln  \frac{\csc(x_0) - \cot(x_0)}{\csc(x) - \cot(x)} 
+\]
+
+Even in this simple non-linear example, the behavior of the system is not easy to understand from this solution. But graphical analysis shows the most important properties. Plotting a phase portrait (left figure), stable and unstable fixed points can be determined. In 1D, the systems dynamics corresponds to flow on the line. The corresponding trajectories are shown in the right figure.
+
+For a stable fixed point, a little change in \(x\) drives the system back, whereas for an unstable fixed point it causes a flow away from the fixed point. Choosing different starting points, the time-dependence of the acceleration computes as follows: for starting points \(|x^4 - \pi | \leq \frac{\pi}{2}\) the acceleration directly decreases. \(x^* = \pi \pm \Delta x\) with \(\frac{\pi}{2} < \Delta x \leq \pi\), the acceleration first increases and decreases after the deflection point. In a one-dimensional system, there are three possibilities in total the system can behave:
+\begin{enumerate}
+    \item staying at a fixed point
+    \item flowing to a stable fixed point
+    \item flowing to infinity
+\end{enumerate}
+
+\noindent \textbf{Definition 1.2.} \textit{Fixed (equilibria) Points}
+\newpage 
+
+A fixed point of the system (1) is a point \(x^* \in \mathbb{R}^n\) such that \(f(x^*, \mu) = 0\). \\
+\\
+\\
+\\
+\textbf{Example 1.2.} Find the fixed point of the following equation
+\\
+\\
+\[
+\dot{x} = x^2 + \mu
+\]
+\\
+\\
+\textit{Solution:} Fixed points are given by \(f(x, \mu ) = 0\), then
+\[
+x^2 + \mu  = 0 
+\]
+\\
+\[
+x = \pm \sqrt{-\mu}
+\]
+Then:
+\begin{enumerate}
+    \item If \(\mu > 0 \Leftrightarrow\) there are no fixed points.
+    \item If \(\mu = 0 \Leftrightarrow\) there is a natural fixed point.
+    \item If \(\mu < 0 \Leftrightarrow\) there are two fixed points, i.e., \(x = +\sqrt{-\mu}\) and \(x = -\sqrt{-\mu}\).
+\end{enumerate}
+
+\textbf{Definition 1.3.} Bifurcation
+
+Bifurcation is a sudden change in the number or nature of the fixed points caused by a parameter change in the system. Fixed points may appear or disappear, change their stability, or even break apart into periodic points. Such
+
+\newpage 
+
+
+
+bifurcation can be analyzed entirely through changes in the local stability properties of equilibria, periodic orbits, or other invariant sets. Local bifurcation includes:
+\begin{enumerate}
+    \item The saddle-node bifurcation
+    \item Transcritical bifurcation
+    \item Period doubling bifurcation
+    \item The pitchfork bifurcation
+    \item The Hopf bifurcation
+\end{enumerate}
+We return to the above example and compute the first derivative of the vector field as:
+\begin{equation}
+f'(x, \mu) = 2x
+\end{equation}
+
+
+\newpage 
+
+In iii, \(x = +\sqrt{-\mu}\) is an unstable fixed point where
+\[
+f'(x, \mu) \bigg|_{x} = \sqrt{-\mu} = 2\sqrt{-\mu} > 0
+\]
+
+In iii, \(x= - \sqrt{-\mu}\) is a stable fixed point where
+\[
+f'(x, \mu) \bigg|_{x} = \sqrt{-\mu} = 2\sqrt{-\mu} < 0
+\]
+This type of bifurcation is called Saddle-node bifurcation. In it, a pair of hyperbolic equilibria, one stable and one unstable, coalesce at the bifurcation point, annihilate each other and disappear.
+
+\textbf{Example 1.3.} The following equation has a saddle-node bifurcation:
+\\
+\\
+\[
+\dot{x} = x^2 - \mu
+\]
+\\
+\\
+\textbf{Lemma 1.1.} If \(x \in \mathbb{R}^2\) and the linear system (1.3) has complex eigenvalues \(a \pm ib\), then the system has a periodic orbit if \(a =0\).
+
+\textbf{Example 1.4.} Consider the linear system:
+\[
+\dot{x} + Kx = 0 \qquad \text{(1.6)}
+\]
+
+
+
+
+
+
+
+
+
+
+
+\newpage 
+This example explains that; we can rewrite equation (1.6) as a system of first-order ODEs, as well in vector matrix form. Let $x_1 = x$ and $x_2 = \dot{x}$, then equation (1.6) reduces to the following first-order ODEs:
+\begin{align}
+    \dot{x}_1 &= x_2 \\
+    \dot{x}_2 &= -Kx_1
+\end{align}
+where $K = 1$. The system can be written in vector matrix form as:
+\[
+\begin{pmatrix}
+    \dot{x}_1 \\
+    \dot{x}_2
+\end{pmatrix}
+= 
+\begin{pmatrix}
+    0 & 1 \\
+    -1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+    x_1 \\
+    x_2
+\end{pmatrix}
+\]
+or in simple form as \\
+
+\begin{center}
+$\dot{x} = Ax$, $A = \begin{pmatrix}0 & 1\\ -1 & 0\end{pmatrix}$. 
+\end{center}
+Now, we compute the eigenvalues of $A$ \\
+$|A - \lambda I| = 0$,
+\[
+
+\begin{pmatrix}
+    -\lambda & 1 \\
+    -1 & -\lambda
+\end{pmatrix} = \lambda^2 +1 = 0
+\]
+\\ 
+Then, the eigenvalues are $\lambda = \pm i$, and according to Lemma 1.1, the system has a periodic orbit. \\
+In other hand if we solve the system (1.1.1) as:
+
+\newpage 
+
+
+
+
+
+
+\[
+\frac{dx_1}{dx_2} = -\frac{x_1}{x_2} \iff \int x_1 \, dx_1 = - \int x_2 \, dx_2 
+\]
+
+\[
+\frac{x_1^2}{2} = \frac{x_2^2}{2} + c_1 \iff x_1^2 + x_2^2 = c
+\]
+
+This is the equation of a circle, indicating that the solution system has a periodic orbit.
+
+\end{document}
