@@ -135,7 +135,7 @@ ENV HOME=/home/user \
 
 WORKDIR $HOME/app
 
-COPY --chown=user . $HOME/app
+COPY --chown=user backendrand $HOME/app
 # RUN bash u.sh
 
 USER root
