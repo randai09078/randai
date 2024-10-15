@@ -1,1 +1,0 @@
-https://pandoc.org/chunkedhtml-demo/10-slide-shows.html
