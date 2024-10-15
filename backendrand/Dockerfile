@@ -1,7 +1,7 @@
 FROM python:3.10
 WORKDIR /code
 RUN ls
-COPY requirements.txt /code/requirements.txt
+COPY backendrand/requirements.txt /code/requirements.txt
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 RUN pip install g4f
