@@ -8,7 +8,7 @@ import { useBasicLayout } from '@/hooks/useBasicLayout'
 import { t } from '@/locales'
 import { copyToClip } from '@/utils/copy'
 import { SvgIcon } from '@/components/common'
-import { useChatStore } from '@/store'
+import { useChatStore, useSettingStore } from '@/store'
 // import * as markdownItLinkPreview from 'markdown-it-link-preview';
 
 interface Props {
@@ -55,19 +55,21 @@ const wrapClass = computed(() => {
   ]
 })
 const chatStore = useChatStore()
-const isStream = computed(() => {
-  const currentConversation = chatStore.currentConversation;
+const settings = useSettingStore()
+const isStream = computed(() => settings.getIsisStream())
+// const isStream = computed(() => {
+//   const currentConversation = chatStore.currentConversation;
 
-  if (currentConversation.modelInfo?.isStream) {
-    const languages = currentConversation.modelInfo.languages;
-    // console.log('languages', languages, currentConversation.lang)
-    if (languages && currentConversation.lang && languages.includes(currentConversation.lang)) {
-      return true;
-    }
-  }
+//   if (currentConversation.modelInfo?.isStream) {
+//     const languages = currentConversation.modelInfo.languages;
+//     // console.log('languages', languages, currentConversation.lang)
+//     if (languages && currentConversation.lang && languages.includes(currentConversation.lang)) {
+//       return true;
+//     }
+//   }
 
-  return false;
-});
+//   return false;
+// });
 
 const text = computed(() => {
   const value = props.text ?? '';

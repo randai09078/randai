@@ -12,7 +12,7 @@ import { useUsingContext } from './hooks/useUsingContext'
 import HeaderComponent from './components/Header/index.vue'
 import { SvgIcon } from '@/components/common'
 import { useBasicLayout } from '@/hooks/useBasicLayout'
-import { useAppStore, useChatStore, usePromptStore, useUserStore } from '@/store'
+import { useAppStore, useChatStore, usePromptStore, useSettingStore } from '@/store'
 import { fetchChatProcess } from '@/api'
 import { t } from '@/locales'
 import { SelectService, SelectLang, SelectModel, SelectSystemPromt, StepResearch } from '@/views/chat/components/index'
@@ -31,6 +31,7 @@ import { SelectService, SelectLang, SelectModel, SelectSystemPromt, StepResearch
 const dialog = useDialog()
 const ms = useMessage()
 const chatStore = useChatStore()
+const settings = useSettingStore()
 const { isMobile } = useBasicLayout()
 // const { addChat, updateChat, updateChatSome, getChatByUuidAndIndex } = useChat()
 const { scrollRef, scrollToBottom, scrollToBottomIfAtBottom } = useScroll()
@@ -75,21 +76,21 @@ async function handleSubmit() {
   }
 
 }
-
-const isStream = computed(() => {
-  const currentConversation = chatStore.currentConversation;
-
-  if (currentConversation.modelInfo?.isStream) {
-    const languages = currentConversation.modelInfo.languages;
-    // console.log('languages', languages, currentConversation.lang)
-    if (currentConversation.type === 'research'){
-      return true;
-    }
-    if (languages && currentConversation.lang && languages.includes(currentConversation.lang) && currentConversation.type !== 'image') {
-      return true;
-    }
-  }
-})
+const isStream = computed(() => settings.getIsisStream())
+// const isStream = computed(() => {
+//   const currentConversation = chatStore.currentConversation;
+ 
+//   if (currentConversation.modelInfo?.isStream) {
+//     const languages = currentConversation.modelInfo.languages;
+//     // console.log('languages', languages, currentConversation.lang)
+//     if (currentConversation.type === 'research'){
+//       return true;
+//     }
+//     if (languages && currentConversation.lang && languages.includes(currentConversation.lang) && currentConversation.type !== 'image') {
+//       return true;
+//     }
+//   }
+// })
 
 
 async function handleChatRequest(
@@ -102,7 +103,7 @@ async function handleChatRequest(
   let lastProcessedIndex = 0;
   if (loadingMessage.value) return;
   if (!message || message.trim() === '') return;
-
+console.log("isStream.value", isStream.value)
 
   chatStore.loadingMessage = true;
 
@@ -115,6 +116,7 @@ async function handleChatRequest(
       conversation_id: chatStore.currentConversation.id,
       parentMessageId: parentMessageId,
       isWebSearch: isWebSearch.value,
+      isStream:isStream.value,
       prompt: message,
       image: imageUrl,
       type: typeService.value,
@@ -130,7 +132,7 @@ async function handleChatRequest(
           const chunk = newLines[i];
           try {
             const data = JSON.parse(chunk);
-   
+   console.error(data)
             chatStore.updateMessageTextChat({ error: false, loading: true, index, res: data });
             scrollToBottomIfAtBottom();
           } catch (error: any) {

@@ -6,6 +6,7 @@ interface FetchChatParams {
   conversation_id: string;
   parentMessageId?: string;
   isWebSearch?: boolean;
+  isStream:boolean
   image?: string;
   options?: { conversationId?: string; parentMessageId?: string };
   prompt: string;
@@ -37,7 +38,8 @@ export async function fetchChatProcess<T = any>(params: FetchChatParams) {
     conversationId: conversationId,
     isWebSearch: params.isWebSearch,
     image: params.image,
-    isEmojis: settingStore.isEmojis
+    isEmojis: settingStore.isEmojis,
+    isStream:params.isStream
   };
   let url = ""
   if (params.type === 'image') {

@@ -6,7 +6,8 @@ export interface SettingsState {
   systemMessage: string
   temperature: number
   top_p: number
-  isEmojis?:boolean
+  isEmojis:boolean
+  isStream:boolean
 }
 
 export function defaultSetting(): SettingsState {
@@ -14,7 +15,9 @@ export function defaultSetting(): SettingsState {
     systemMessage: '',
     temperature: 0.8,
     top_p: 1,
-    isEmojis:false
+    isEmojis:false,
+    isStream:false
+
   }
 }
 

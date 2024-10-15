@@ -114,44 +114,44 @@ const routes: RouteRecordRaw[] = [
   //   ],
 
   // },
-  {
-    path: '/research',
-    name: 'research',
-    component: ResearchLayout,
-    children: [
-      {
-        path: '/research/add-university',
-        name: 'add-university',
-        component: () => import('@/views/research/university/AddUniversity.vue'),
-        meta: { requiresAuth: true },
-      },
-      {
-        path: '/research/university',
-        name: 'university',
-        component: () => import('@/views/research/university/ListUniversity.vue'),
-        meta: { requiresAuth: true },
-      },
-      {
-        path: '/research/profile',
-        name: 'profile',
-        component: () => import('@/views/research/profile/index.vue'),
-        meta: { requiresAuth: true },
-      },
-      {
-        path: '/research/gen-research',
-        name: 'gen-research',
-        component: () => import('@/views/research/research/index.vue'),
-        meta: { requiresAuth: true },
-      },
-      {
-        path: '/research/major',
-        name: 'major',
-        component: () => import('@/views/research/major/ListMajor.vue'),
-        meta: { requiresAuth: true },
-      },
-    ],
+  // {
+  //   path: '/research',
+  //   name: 'research',
+  //   component: ResearchLayout,
+  //   children: [
+  //     {
+  //       path: '/research/add-university',
+  //       name: 'add-university',
+  //       component: () => import('@/views/research/university/AddUniversity.vue'),
+  //       meta: { requiresAuth: true },
+  //     },
+  //     {
+  //       path: '/research/university',
+  //       name: 'university',
+  //       component: () => import('@/views/research/university/ListUniversity.vue'),
+  //       meta: { requiresAuth: true },
+  //     },
+  //     {
+  //       path: '/research/profile',
+  //       name: 'profile',
+  //       component: () => import('@/views/research/profile/index.vue'),
+  //       meta: { requiresAuth: true },
+  //     },
+  //     {
+  //       path: '/research/gen-research',
+  //       name: 'gen-research',
+  //       component: () => import('@/views/research/research/index.vue'),
+  //       meta: { requiresAuth: true },
+  //     },
+  //     {
+  //       path: '/research/major',
+  //       name: 'major',
+  //       component: () => import('@/views/research/major/ListMajor.vue'),
+  //       meta: { requiresAuth: true },
+  //     },
+  //   ],
 
-  },
+  // },
 
   {
     path: '/404',
