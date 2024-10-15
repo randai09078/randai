@@ -1,3 +1,3 @@
-from .ChatText import ChatText
-from .ImageGenerator import ImageGenerator
-from .ResearchGen import ResearchGen
+from .chat_text import ChatText
+from .image_generator import ImageGenerator
+from .research_gen import ResearchGen

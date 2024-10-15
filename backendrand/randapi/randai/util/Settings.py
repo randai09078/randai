@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 class Settings:
-    def __init__(self, is_emojis= True):
+    def __init__(self, is_emojis= False):
         self.is_emojis = is_emojis
         self.system_message_rand = {}
         self.load_system_message_rand()

@@ -2,11 +2,11 @@
 from django.urls import path, include
 from rest_framework import routers
 from .views import *
-from .Conversation import ConversationAPIViewSet
-from .Messages import ListMessagesAPIViewSet,  MessageAISet
-from .Images import  ListImageAIAPIViewSet
-from .ModelsAi import  ListModelAPIViewSet 
-from .Conversation import delete_conversation
+from .conversation import ConversationAPIViewSet
+from .messages import ListMessagesAPIViewSet,  MessageAISet
+from .images import  ListImageAIAPIViewSet
+from .models_ai import  ListModelAPIViewSet 
+from .conversation import delete_conversation
 
 router = routers.DefaultRouter()
 router.register(r'api-option', ApiOptionViewSet, basename='api-option')

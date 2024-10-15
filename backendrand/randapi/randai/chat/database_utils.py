@@ -1,12 +1,12 @@
 # database_utils.py
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
-from chat.ModelsAi import ModelAI
+from chat.models_ai import ModelAI
 from .models import Language
-from .Conversation import Conversation
-from chat.Messages import MessageUser, MessageAI, TextTranMessage
-from .Images import ImageAI, MessageUserImage
-from util.Helper import Helper
+from .conversation import Conversation
+from chat.messages import MessageUser, MessageAI, TextTranMessage
+from .images import ImageAI, MessageUserImage
+from util.helper import Helper
 from django.http import Http404
 from util import TextTran
 helper = Helper()

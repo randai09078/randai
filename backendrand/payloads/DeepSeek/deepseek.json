@@ -1,0 +1,43 @@
+{
+    "code": "deepseek",
+    "label": "Deepseek",
+    "type_service": "text",
+    "is_active": true,
+    "is_stream": false,
+    "is_web_search": false,
+    "is_allow_image": false,
+    "state": "Running",
+    "company_ai": {
+        "id": 3,
+        "name": "mixtral",
+        "label": "mixtral",
+        "is_active": true,
+        "description": "",
+        "img_url": "",
+        "website_url": "",
+        "created_at": "2024-01-14T14:05:18.573505Z",
+        "updated_at": "2024-01-14T14:05:18.573630Z"
+    },
+    "description": "",
+    "api_owner": {
+        "code": "gpt4all",
+        "api_options": [],
+        "type_service": "text",
+        "type_price": "free",
+        "label": "Gpt 4 all",
+        "is_active": true,
+        "state": "Running",
+        "notes": "",
+        "version": "",
+        "created_at": "2024-01-13T14:54:37.965633Z",
+        "updated_at": "2024-01-13T14:54:37.965711Z",
+        "api_options_id": []
+    },
+    "company_ai_id": 3,
+    "api_owner_id": "gpt4all",
+    "provider": [],
+    "languages": [
+        "en",
+        "ar"
+    ]
+}

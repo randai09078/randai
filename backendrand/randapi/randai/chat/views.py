@@ -12,15 +12,15 @@ import json
 from .database_utils import save_data_in_db
 from .serializers import *
 from rest_framework import viewsets
-from .Helper.HelperChatText import HelperChatText
-from .Conversation import Conversation
+from .helper.helper_chat_text import HelperChatText
+from .conversation import Conversation
 from service import ChatText, ImageGenerator, ResearchGen
 from django.http import StreamingHttpResponse, HttpResponse
 from util import TextTran, Settings, PandocConverter, WordTool
-from chat.ModelsAi import ModelAI, ModelAISerializer
+from chat.models_ai import ModelAI, ModelAISerializer
 from rest_framework.decorators import api_view
 
-from chat.Messages import (
+from chat.messages import (
     MessageUser,
     MessageAI,
     MessageUserSerializer,
@@ -206,6 +206,7 @@ class ChatAPIView(APIView):
 
 class ChatTextAPIView(ChatAPIView):
     def post(self, request, *args, **kwargs):
+        print("request", request.data)
         return self.handle_request(request, is_image=False, is_research=False)
 
 
@@ -239,7 +240,7 @@ class GetImageView(APIView):
             )
 
 
-from .Messages import ListMessagesSerializer
+from .messages import ListMessagesSerializer
 
 
 class DocumentDownloadView(APIView):
