@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { setupPageGuard } from './permission'
 import { ChatLayout } from '@/views/chat/layout'
 import { ResearchLayout } from '@/views/research/layout'
-import { AdminLayout } from '@/views/admin/layout'
+// import { AdminLayout } from '@/views/admin/layout'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -63,32 +63,32 @@ const routes: RouteRecordRaw[] = [
     name: 'otp',
     component: () => import('@/views/auth/OTP.vue'),
   },
-  {
-    path: '/admin',
-    name: 'admin',
-    component: AdminLayout,
-    children: [
-      {
-        path: '/admin/models',
-        name: 'adminModels',
-        component: () => import('@/views/admin/models/index.vue'),
-        // meta: { requiresAuth: true },
-      },
-      {
-        path: '/admin/api',
-        name: 'api',
-        component: () => import('@/views/admin/api/index.vue'),
-        // meta: { requiresAuth: true },
-      },
-      {
-        path: '/admin/company',
-        name: 'company',
-        component: () => import('@/views/admin/company/index.vue'),
-        // meta: { requiresAuth: true },
-      },
-    ],
+  // {
+  //   path: '/admin',
+  //   name: 'admin',
+  //   component: AdminLayout,
+  //   children: [
+  //     {
+  //       path: '/admin/models',
+  //       name: 'adminModels',
+  //       component: () => import('@/views/admin/models/index.vue'),
+  //       // meta: { requiresAuth: true },
+  //     },
+  //     {
+  //       path: '/admin/api',
+  //       name: 'api',
+  //       component: () => import('@/views/admin/api/index.vue'),
+  //       // meta: { requiresAuth: true },
+  //     },
+  //     {
+  //       path: '/admin/company',
+  //       name: 'company',
+  //       component: () => import('@/views/admin/company/index.vue'),
+  //       // meta: { requiresAuth: true },
+  //     },
+  //   ],
 
-  },
+  // },
   // {
   //   path: '/cv',
   //   name: 'cv',

@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Backup vite.config.ts
-# cp vite.config.ts vite.config.ts.backup
-
-# # Replace line in vite.config.ts
-# sed -i 's/Terminal({console: 'terminal'})/Terminal()/' vite.config.ts
-
 # Run build
 pnpm run build
 
